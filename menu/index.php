@@ -4,11 +4,7 @@
     <title>Sistem Monitoring Suhu</title>
     <meta content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" name="viewport"/> 
     <meta content="Susilawati" name="author"/> 
-    <!-- <link href="../css/bootstrap.css" rel="stylesheet"> 
-    <link href="../font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
     <script src="https://cdn.tailwindscss.com"></script>
-    <script src="../js/jquery.min.js"></script> 
-    <script src="../js/bootstrap.min.js"></script>
 </head>
 <body class="bg-gray-100">
     <?php
