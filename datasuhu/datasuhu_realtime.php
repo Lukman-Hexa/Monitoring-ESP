@@ -73,13 +73,24 @@
         // Analisis Fuzzy (kode tidak berubah)
         $label_kenyamanan = "Tidak Diketahui";
         $skor_kenyamanan = 0;
+
         if ($suhu_terakhir !== null) {
-            $python_venv_path = "D:\\Kuliah\\IOT\\tugas_akhir_semester\\Monitoring-ESP\\.venv\\Scripts\\python.exe";
-            $python_script_path = "D:\\Kuliah\\IOT\\tugas_akhir_semester\\Monitoring-ESP\\scripts\\analisis_kenyamanan.py";
-            $command = escapeshellarg($python_venv_path) . " " . escapeshellarg($python_script_path) . " " . escapeshellarg($suhu_terakhir);
-            $output = shell_exec($command);
-            if ($output && strpos($output, '#') !== false) {
-                list($label_kenyamanan, $skor_kenyamanan) = explode('#', trim($output));
+            // Buat URL untuk memanggil API lokal, sertakan suhu terakhir
+            $url = "http://127.0.0.1:5000/analisis?suhu=" . urlencode($suhu_terakhir);
+            
+            // Panggil API dan ambil hasilnya (json)
+            // @ digunakan untuk menekan warning jika API tidak berjalan
+            $json_response = @file_get_contents($url);
+            
+            if ($json_response) {
+                // Ubah respons JSON menjadi array PHP
+                $hasil = json_decode($json_response, true);
+                
+                // Periksa apakah statusnya sukses dan ada data
+                if (isset($hasil['status']) && $hasil['status'] == 'success') {
+                    $label_kenyamanan = $hasil['label'];
+                    $skor_kenyamanan = $hasil['skor'];
+                }
             }
         }
 

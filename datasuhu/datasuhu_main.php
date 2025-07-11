@@ -17,12 +17,12 @@
         <table id="mytable" class="min-w-full bg-white border border-gray-300">
             <thead>
                 <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-                    <th class="py-3 px-6 text-left">No</th>
-                    <th class="py-3 px-6 text-left">Id</th>
-                    <th class="py-3 px-6 text-left">Id Perangkat</th>
-                    <th class="py-3 px-6 text-left">Nilai Temperatur</th>
-                    <th class="py-3 px-6 text-left">Waktu</th>
-                    <th class="py-3 px-6 text-left">Aksi</th>
+                    <th class="py-3 px-6 text-center">No</th>
+                    <th class="py-3 px-6 text-center">Id</th>
+                    <th class="py-3 px-6 text-center">Id Perangkat</th>
+                    <th class="py-3 px-6 text-center">Nilai Temperatur</th>
+                    <th class="py-3 px-6 text-center">Waktu</th>
+                    <th class="py-3 px-6 text-center">Aksi</th>
                 </tr>
             </thead>
             <tbody class="text-gray-600 text-sm font-light">
@@ -36,11 +36,12 @@
                     $no++;
                 ?>
                 <tr class="border-b border-gray-200 hover:bg-gray-100">
-                    <td class="py-3 px-6 text-left whitespace-nowrap"><?php echo $no; ?></td>
-                    <td class="py-3 px-6 text-left"><?php echo $r['id']; ?></td> <td class="py-3 px-6 text-left"><?php echo $r['id_perangkat']; ?></td>
-                    <td class="py-3 px-6 text-left"><?php echo $r['nilai_temperatur']; ?></td>
-                    <td class="py-3 px-6 text-left"><?php echo $r['tanggal']; ?></td>
-                    <td class="py-3 px-6 text-left">
+                    <td class="py-3 px-6 text-center whitespace-nowrap"><?php echo $no; ?></td>
+                    <td class="py-3 px-6 text-center"><?php echo $r['id']; ?></td> 
+                    <td class="py-3 px-6 text-center"><?php echo $r['id_perangkat']; ?></td>
+                    <td class="py-3 px-6 text-center"><?php echo $r['nilai_temperatur']; ?></td>
+                    <td class="py-3 px-6 text-center"><?php echo $r['tanggal']; ?></td>
+                    <td class="py-3 px-6 text-center">
                         <a href="#" onclick="konfirmasi_hapus('proses_delete.php?&id=<?php echo $r['id']; ?>&namatable=tbl_temperatur');" class="text-red-500 hover:text-red-700">Delete</a>
                     </td>
                 </tr>
