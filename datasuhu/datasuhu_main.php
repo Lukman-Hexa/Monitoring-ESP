@@ -5,8 +5,6 @@
     <meta content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" name="viewport"/>
     <meta content="Mandi" name="author"/>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="../js/jquery.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
 </head>
 <body class="bg-gray-100">
     <?php
